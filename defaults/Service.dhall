@@ -1,8 +1,6 @@
-{ Name = "redis-cache"
-, Tags = [ "global", "cache" ]
-, Meta = toMap { meta = "for my service" }
+{ Tags = [] : List Text
+, Meta = (../Map.dhall).empty Text Text
 , CanaryTags = [] : List Text
-, PortLabel = "db"
 , AddressMode = ""
 , Checks = [ ./Check.dhall ]
 }
