@@ -1,5 +1,7 @@
 let types = ./types.dhall
 
+let Map = ./Map.dhall
+
 let ReschedulePolicy =
         { Attempts = 10
         , Interval = 0
@@ -40,7 +42,7 @@ let Check =
         { AddressMode = ""
         , Args = [] : List Text
         , Command = ""
-        , Header = types.Map.empty Text (List Text)
+        , Header = Map.empty Text (List Text)
         , Name = "alive"
         , Path = ""
         , Method = ""
@@ -82,12 +84,12 @@ let Task =
         , Spreads = [] : List types.Spread
         , DispatchPayload = None types.DispatchPayload
         , Driver = "docker"
-        , Env = types.Map.empty Text Text
+        , Env = Map.empty Text Text
         , KillSignal = "SIGINT"
         , KillTimeout = 5000000000
         , Leader = False
         , LogConfig = None types.LogConfig
-        , Meta = types.Map.empty Text Text
+        , Meta = Map.empty Text Text
         , Name = "redis"
         , Services = [ Service ]
         , ShutdownDelay = None Natural
