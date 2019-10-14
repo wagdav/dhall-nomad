@@ -1,0 +1,161 @@
+{
+    "Job": {
+        "Stop": null,
+        "Region": null,
+        "Namespace": null,
+        "ID": "example",
+        "ParentID": null,
+        "Name": "example",
+        "Type": "service",
+        "Priority": null,
+        "AllAtOnce": null,
+        "Datacenters": [
+            "dc1"
+        ],
+        "Constraints": null,
+        "Affinities": null,
+        "TaskGroups": [
+            {
+                "Name": "cache",
+                "Count": 1,
+                "Constraints": null,
+                "Affinities": null,
+                "Tasks": [
+                    {
+                        "Name": "redis",
+                        "Driver": "docker",
+                        "User": "",
+                        "Config": {
+                            "image": "redis:3.2",
+                            "port_map": [
+                                {
+                                    "db": 6379
+                                }
+                            ]
+                        },
+                        "Constraints": null,
+                        "Affinities": null,
+                        "Env": null,
+                        "Services": [
+                            {
+                                "Id": "",
+                                "Name": "redis-cache",
+                                "Tags": [
+                                    "global",
+                                    "cache"
+                                ],
+                                "CanaryTags": null,
+                                "PortLabel": "db",
+                                "AddressMode": "",
+                                "Checks": [
+                                    {
+                                        "Id": "",
+                                        "Name": "alive",
+                                        "Type": "tcp",
+                                        "Command": "",
+                                        "Args": null,
+                                        "Path": "",
+                                        "Protocol": "",
+                                        "PortLabel": "",
+                                        "AddressMode": "",
+                                        "Interval": 10000000000,
+                                        "Timeout": 2000000000,
+                                        "InitialStatus": "",
+                                        "TLSSkipVerify": false,
+                                        "Header": null,
+                                        "Method": "",
+                                        "CheckRestart": null,
+                                        "GRPCService": "",
+                                        "GRPCUseTLS": false
+                                    }
+                                ],
+                                "CheckRestart": null
+                            }
+                        ],
+                        "Resources": {
+                            "CPU": 500,
+                            "MemoryMB": 256,
+                            "DiskMB": null,
+                            "Networks": [
+                                {
+                                    "Device": "",
+                                    "CIDR": "",
+                                    "IP": "",
+                                    "MBits": 10,
+                                    "ReservedPorts": null,
+                                    "DynamicPorts": [
+                                        {
+                                            "Label": "db",
+                                            "Value": 0
+                                        }
+                                    ]
+                                }
+                            ],
+                            "Devices": null,
+                            "IOPS": null
+                        },
+                        "Meta": null,
+                        "KillTimeout": null,
+                        "LogConfig": null,
+                        "Artifacts": null,
+                        "Vault": null,
+                        "Templates": null,
+                        "DispatchPayload": null,
+                        "Leader": false,
+                        "ShutdownDelay": 0,
+                        "KillSignal": ""
+                    }
+                ],
+                "Spreads": null,
+                "RestartPolicy": {
+                    "Interval": 1800000000000,
+                    "Attempts": 2,
+                    "Delay": 15000000000,
+                    "Mode": "fail"
+                },
+                "ReschedulePolicy": null,
+                "EphemeralDisk": {
+                    "Sticky": null,
+                    "Migrate": null,
+                    "SizeMB": 300
+                },
+                "Update": null,
+                "Migrate": null,
+                "Meta": null
+            }
+        ],
+        "Update": {
+            "Stagger": null,
+            "MaxParallel": 1,
+            "HealthCheck": null,
+            "MinHealthyTime": 10000000000,
+            "HealthyDeadline": 180000000000,
+            "ProgressDeadline": 600000000000,
+            "Canary": 0,
+            "AutoRevert": false,
+            "AutoPromote": null
+        },
+        "Spreads": null,
+        "Periodic": null,
+        "ParameterizedJob": null,
+        "Dispatched": false,
+        "Payload": null,
+        "Reschedule": null,
+        "Migrate": {
+            "MaxParallel": 1,
+            "HealthCheck": "checks",
+            "MinHealthyTime": 10000000000,
+            "HealthyDeadline": 300000000000
+        },
+        "Meta": null,
+        "VaultToken": null,
+        "Status": null,
+        "StatusDescription": null,
+        "Stable": null,
+        "Version": null,
+        "SubmitTime": null,
+        "CreateIndex": null,
+        "ModifyIndex": null,
+        "JobModifyIndex": null
+    }
+}
