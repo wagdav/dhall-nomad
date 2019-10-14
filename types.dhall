@@ -131,13 +131,13 @@ let TaskGroup {- https://www.nomadproject.io/api/json-jobs.html#task-group -} =
       , Constraints : List Constraint
       , Count : Natural
       , EphemeralDisk : EphemeralDisk
-      , Migrate : Migrate
+      , Migrate : Optional Migrate
       , Name : Text
       , RestartPolicy : RestartPolicy
       , ReschedulePolicy : Optional ReschedulePolicy
       , Spreads : List Spread
       , Tasks : List Task
-      , Update : Update
+      , Update : Optional Update
       }
 
 let Job {- https://www.nomadproject.io/api/json-jobs.html#job -} =
@@ -147,6 +147,7 @@ let Job {- https://www.nomadproject.io/api/json-jobs.html#job -} =
       , Datacenters : List Text
       , ID : Text
       , Meta : List Text
+      , Migrate : Migrate
       , Namespace : List Text
       , ParametrizedJob : Optional ParametrizedJob
       , Periodic : Optional Periodic
@@ -156,7 +157,7 @@ let Job {- https://www.nomadproject.io/api/json-jobs.html#job -} =
       , Spreads : List Spread
       , TaskGroups : List TaskGroup
       , Type : Text
-      , Update : Optional Update
+      , Update : Update
       }
 
 in  { Affinity = Affinity
