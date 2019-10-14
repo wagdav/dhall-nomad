@@ -133,7 +133,7 @@ let TaskGroup {- https://www.nomadproject.io/api/json-jobs.html#task-group -} =
       , EphemeralDisk : EphemeralDisk
       , Migrate : Optional Migrate
       , Name : Text
-      , RestartPolicy : RestartPolicy
+      , RestartPolicy : Optional RestartPolicy
       , ReschedulePolicy : Optional ReschedulePolicy
       , Spreads : List Spread
       , Tasks : List Task
